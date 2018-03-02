@@ -11,6 +11,12 @@ body {
 
 
 
+#h {
+		z-index: 100;
+}
+
+
+
 
 .a {
 		max-width: 5%;
@@ -80,6 +86,29 @@ a {
     padding: 0px;
 }
 
+.ja {
+  position: absolute;   display: inline; 
+z-index: -100;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .a {
+       	max-width: 40%;
+	max-width: 40vw;
+    }
+
+.p {
+max-width:  70%;
+max-width:  70vw;
+}
+
+
+.ja {
+max-width:  20%;
+max-width:  20vw;
+}
+
 </style>
 <script>
 
@@ -95,10 +124,12 @@ function  sendEmail(a) {
 
 </script>
 
-<body><a><img  class="a"  src="i.png"></a><h1>Lота</h1> <h2> 3D Tеxт Sтiсkmаn Avatar Messenger</h2>
+<body>
+<img class="ja" style=" left: 10px;" src="a.png">
+<img class="ja" style="right: 10px;" src="b.png">
+<a id="h"><img  class="a"  src="i.png"></a><h1>Lота</h1> <h2> 3D Tеxт Sтiсkmаn Avatar Messenger</h2>
 <h3> Send Exciting Custom Sтiсkmаn Animated Emoji and More!</h3> 
-<br><img style="position: absolute;   display: inline; left: 10px;" src="a.png">
-<img style="position: absolute;   display: inline; right: 10px;" src="b.png">
+<br>
 <div><a><img class="p"  src="pi.jpg"></a></div>
 <br>
 
