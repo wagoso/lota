@@ -101,6 +101,36 @@ top: 30vh;
 }
 
 
+.button {
+    height: 50px;
+    margin: 0px;
+    padding: 0px 18px;
+    border: medium none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background: none repeat scroll 0% 0% rgb(60, 163, 216);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 0px 0px 0px 0px;
+    transition: all 0.25s ease-in-out 0s;
+}
+
+.email {
+    height: 50px;
+    margin: 0px;
+    padding: 10px;
+    line-height: 28px;
+    border-width: 2px medium 2px 2px;
+    border-style: solid none solid solid;
+    border-color: rgb(60, 163, 216) -moz-use-text-color rgb(60, 163, 216) rgb(60, 163, 216);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+}
+
+
 @media only screen and (max-width: 500px) {
     .a {
        	max-width: 40%;
@@ -155,10 +185,10 @@ Tired of the boring plain text messages? Send your friends exciting enhanced mes
 <div id="email">
 Get updates on the upcoming release and subscribe to our mailing list.
  <form id="myForm" align="center">
-  <input name="myName" type="email" placeholder="Please Enter Your Email Address" required>
-            <input type="submit" value="Send" 
+  <input name="myName" type="email" placeholder="Please Enter Your Email Address" class='email'  required>
+            <input type="submit" value="Subscribe" class='button'
            onclick="this.value='Sending..'; sendEmail(this.parentNode);
-                    return false;">
+                    return false;" required>
           </form>
 </div>
 
