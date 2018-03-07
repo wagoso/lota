@@ -157,12 +157,30 @@ top: 12vh;
 
 
 function  sendEmail(a) {
-	var v = a.myName.value;
+	var v = a.e.value;
 	if(v == null || v.trim().length < 1) {
 			alert("Please enter valid email.")
+		return false;
 	}
 
-	window.location.href = 'https://script.google.com/macros/s/AKfycbzU5Dn-pB7K5dd5OnR6uaLNvnzIxvodJh50t9bH6CoEcHXrQqs/exec?a='+v+'&b='+window.location
+	var xmlhttp = new XMLHttpRequest();
+	//xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    	xmlhttp.onreadystatechange = function() {
+        	if (xmlhttp.readyState == XMLHttpRequest.DONE) { 
+           	if (xmlhttp.status == 200) {
+   			document.getElementById('email').innerHTML = "<h1>Thank you!</h1> <br>Your email has been added to the mailing list. You will receive the latest updates about the release.";
+			return;
+           	}	 
+             		 alert('There was an error. Please try again.');
+         
+        }
+    };
+
+    xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbzU5Dn-pB7K5dd5OnR6uaLNvnzIxvodJh50t9bH6CoEcHXrQqs/exec?e="+v, false);
+    xmlhttp.send();
+
+	//a.submit();
+
 }
 
 </script>
@@ -185,7 +203,7 @@ Tired of the boring plain text messages? Send your friends exciting enhanced mes
 <div id="email">
 Get updates on the upcoming release and subscribe to our mailing list.
  <form id="myForm" align="center">
-  <input name="myName" type="email" placeholder="Please Enter Your Email Address" class='email'  required>
+  <input name="e" type="email" placeholder="Please Enter Your Email Address" class='email'  required>
             <input type="submit" value="Subscribe" class='button'
            onclick="this.value='Sending..'; sendEmail(this.parentNode);
                     return false;" required>
