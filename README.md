@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="2; url=https://wagoso.github.io/lota/beta"> 
+<meta http-equiv="refresh" content="0; url=https://wagoso.github.io/lota/beta"> 
